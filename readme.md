@@ -1,3 +1,3 @@
-# MEAN stack app
+# Electronics Store
 
-This repo contains the MEAN stack application that is built through Full Stack Training's MEAN Stack course.
+This is a MEAN stack application for an electronics store
