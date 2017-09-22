@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var ctrlHotels = require('../controllers/hotels.controllers.js');
+var ctrlItems= require('../controllers/Items.controllers.js');
 
 router
-    .route('/hotels')
-    .get(ctrlHotels.hotelsGetAll);
+    .route('/items')
+    .get(ctrlItems.ItemsGetAll);
 
 module.exports = router;

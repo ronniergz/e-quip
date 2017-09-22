@@ -15,6 +15,7 @@ app.use(function(req, res, next) {
 // middleware for static files. "USE"
 app.use(express.static(path.join(__dirname, 'public')));
 
+// router
 app.use('/api', routes);
 
 // setting up the Express server
