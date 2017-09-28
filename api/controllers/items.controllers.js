@@ -1,5 +1,6 @@
-//var itemData = require('../data/item-data.json');
-
+var mongoose = require('mongoose');
+var Item = mongoose.model('Item');
+        
 module.exports.itemsAbout = function(req, res) {           
   console.log('GET the About Page');
   res
@@ -9,23 +10,44 @@ module.exports.itemsAbout = function(req, res) {
 
 module.exports.itemsGetNew = function(req, res) {           
   console.log('GET the new items');
-  res
-    .status(200)
-    .send('<h2> Display All New Items </h2>');
+      
+  Item
+    .find()
+    .exec(function(err, items) {
+      console.log("Found items", items.length);
+      res
+        .status(200)
+        .json(items);
+    });
+    
 };
 
 module.exports.itemsGetPhones = function(req, res) {           
   console.log('GET the phones');
-  res
-    .status(200)
-    .send('<h2> Display All Phones </h2>');
+  
+  Item
+    .find({type : "phone"})
+    .exec(function(err, items) {
+      console.log("Found items", items.length);
+      res
+        .status(200)
+        .json(items);
+    });
+    
 };
 
 module.exports.itemsGetCases = function(req, res) {           
   console.log('GET the cases');
-  res
-    .status(200)
-    .send('<h2> Display All Phone Cases </h2>');
+  
+  Item
+    .find({type : "case"})
+    .exec(function(err, items) {
+      console.log("Found items", items.length);
+      res
+        .status(200)
+        .json(items);
+    });
+    
 };
 
 module.exports.itemsGetCart = function(req, res) {           

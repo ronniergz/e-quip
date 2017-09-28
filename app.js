@@ -1,7 +1,8 @@
+require('./api/data/dbconnection.js');
 var express = require('express');
 var app = express();
 var path = require('path');
-
+      
 var routes = require('./api/routes');
 
 // Define port to run on
