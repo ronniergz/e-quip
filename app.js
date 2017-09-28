@@ -4,24 +4,24 @@ var path = require('path');
 
 var routes = require('./api/routes');
 
-app.set('port', 3000);
+// Define port to run on
+app.set('port', 8080);
 
-// add a console log for any request on the server
+// Add middleware to console log every request
 app.use(function(req, res, next) {
-    console.log(req.method, req.url);
-    next();
+  console.log(req.method, req.url);
+  next(); 
 });
 
-// middleware for static files. "USE"
+// Set static directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// router
-app.use('/api', routes);
 
-// setting up the Express server
+// Add routing
+app.use(routes);
+
+// Listen for requests
 var server = app.listen(app.get('port'), function() {
-    var port = server.address().port;
-    console.log('Magic happens on port ' + port);
+  var port = server.address().port;
+  console.log('Now listening on port ' + app.get('port'));
 });
-
-

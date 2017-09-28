@@ -8,6 +8,25 @@ body {
     margin-bottom: 90px;
 }
 
+.header {
+    text-align: center;
+}
+.navbar {
+    font-size: 16px;    
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+}
+
+.menu-toggle {
+    float: right;
+}
+
 .padded {
     padding-top: 30px;
 }
