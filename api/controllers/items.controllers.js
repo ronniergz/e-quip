@@ -1,15 +1,8 @@
 var mongoose = require('mongoose');
 var Item = mongoose.model('Item');
-        
-module.exports.itemsAbout = function(req, res) {           
-  console.log('GET the About Page');
-  res
-    .status(200)
-    .send('<h2> Display the About Information </h2>');
-};
 
-module.exports.itemsGetNew = function(req, res) {           
-  console.log('GET the new items');
+module.exports.itemsGetAll = function(req, res) {           
+  console.log('GET all the items');
       
   Item
     .find()
@@ -20,6 +13,13 @@ module.exports.itemsGetNew = function(req, res) {
         .json(items);
     });
     
+};
+
+module.exports.itemsAbout = function(req, res) {           
+  console.log('GET the About Page');
+  res
+    .status(200)
+    .send('<h2> Display the About Information </h2>');
 };
 
 module.exports.itemsGetPhones = function(req, res) {           

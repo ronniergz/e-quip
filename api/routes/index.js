@@ -4,16 +4,16 @@ var router = express.Router();
 var ctrlItems = require('../controllers/items.controllers.js');
 var ctrlAccounts = require('../controllers/accounts.controllers.js');
 
+// Display all items
+router
+    .route('/all')
+    .get(ctrlItems.itemsGetAll); 
+    
 //  About Us
 router
     .route('/about')
     .get(ctrlItems.itemsAbout); 
 
-// Display new items
-router
-    .route('/new-items')
-    .get(ctrlItems.itemsGetNew); 
-    
 // Display phones
 router
     .route('/phones')
@@ -28,12 +28,12 @@ router
 router
     .route('/cart')
     .get(ctrlItems.itemsGetCart); 
-    
+/*   
 // Display user Login 
 router
     .route('/account/login')
     .get(ctrlAccounts.userLogin);
-    
+*/    
 
 module.exports = router;
 
