@@ -3,7 +3,8 @@ angular.module('e-quip').controller('ItemsController', ItemsController);
 function ItemsController ($http) {
       var vm = this;
       vm.title = 'MEAN E-quip App';
-      $http.get('/all').then(function(response) {
+      $http.get('/items').then(function(response) {
             console.log(response);
+            vm.items = response.data;
       });
 };

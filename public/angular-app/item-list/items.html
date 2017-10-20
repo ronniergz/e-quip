@@ -1,2 +1,5 @@
 <h1>{{ vm.title }}</h1>
-                      
+               
+<ul>
+   <li ng-repeat="item in vm.items"><a ng-href="#/item/{{ item._id }}">{{ item.desc }}</a></li>
+</ul>               

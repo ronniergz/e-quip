@@ -15,6 +15,20 @@ module.exports.itemsGetAll = function(req, res) {
     
 };
 
+module.exports.itemsGetOne = function(req, res) {           
+  console.log('GET a specific item');
+      
+  Item
+    .find()
+    .exec(function(err, items) {
+      console.log("Found items", items.length);
+      res
+        .status(200)
+        .json(items);
+    });
+    
+};
+
 module.exports.itemsAbout = function(req, res) {           
   console.log('GET the About Page');
   res

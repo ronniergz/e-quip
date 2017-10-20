@@ -6,8 +6,13 @@ var ctrlAccounts = require('../controllers/accounts.controllers.js');
 
 // Display all items
 router
-    .route('/all')
+    .route('/items')
     .get(ctrlItems.itemsGetAll); 
+
+// Display single item
+router
+    .route('/items/:itemId')
+    .get(ctrlItems.itemsGetOne);
     
 //  About Us
 router
