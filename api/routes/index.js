@@ -11,7 +11,7 @@ router
 
 // Display single item
 router
-    .route('/items/:itemId')
+    .route('/items/:id')
     .get(ctrlItems.itemsGetOne);
     
 //  About Us

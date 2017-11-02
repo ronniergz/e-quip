@@ -6,5 +6,6 @@ function ItemsController ($http) {
       $http.get('/items').then(function(response) {
             console.log(response);
             vm.items = response.data;
+            console.log(vm.items);
       });
-};
+}

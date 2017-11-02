@@ -9,12 +9,12 @@ function config($routeProvider) {
                   controller: ItemsController,
                   controllerAs: 'vm'
            })
-            .when('/:id', {
+            .when('/:_id', {
                   templateUrl: 'angular-app/item-display/item.html',
                   controller: ItemController,
                   controllerAs: 'vm'
-           });           
-            
+           });
+
 }
 
 

@@ -17,10 +17,11 @@ module.exports.itemsGetAll = function(req, res) {
 
 module.exports.itemsGetOne = function(req, res) {           
   console.log('GET a specific item');
-      
+  var id = req.params.id;    
+  console.log("go get: " + id);    
   Item
-    .find()
-    .exec(function(err, items) {
+    .findById(id)
+    .exec(function(err, items) {        
       console.log("Found items", items.length);
       res
         .status(200)

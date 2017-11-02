@@ -1,5 +1,11 @@
-<h1>{{ vm.title }}</h1>
+<h1>Items</h1>
+</br>
                
-<ul>
-   <li ng-repeat="item in vm.items"><a ng-href="#/item/{{ item._id }}">{{ item.desc }}</a></li>
+<ul class="list-group">
+   <li ng-repeat="item in vm.items" class="list-group-item">
+      <a ng-href="#!/{{ item._id }}">
+         <img src="/img/products/small/{{ item.image }}">
+         {{ item.desc }}
+      </a>
+   </li>
 </ul>               
