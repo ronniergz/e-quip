@@ -1,8 +1,13 @@
-<h1>Information on:</h1>
-
 </br>
-<img src="/img/products/{{ vm.item.image }}">
-
-</br>
-
-<p>Description: {{ vm.item.desc }}</p>
+<div class="row">
+   <div class="col-sm-4">
+      <img src="/img/products/{{ vm.item.image }}" class="col-md img-responsive">
+   </div>   
+      <div class="col-sm-8">
+      <h2><strong>${{ vm.item.price }}</strong></h2>
+      <p>{{ vm.item.desc }}</p>
+      <p>Available colors: {{ vm.item.availableColors }}</p>
+      <p>{{ vm.item.specs }}</p>
+      <p>{{ vm.item.stock }} left in stock</p>
+   </div>
+</div>

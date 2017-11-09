@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var Item = mongoose.model('Item');
 
+
 module.exports.itemsGetAll = function(req, res) {           
   console.log('GET all the items');
       
@@ -22,7 +23,7 @@ module.exports.itemsGetOne = function(req, res) {
   Item
     .findById(id)
     .exec(function(err, items) {        
-      console.log("Found items", items.length);
+      console.log("Found 1 item");
       res
         .status(200)
         .json(items);

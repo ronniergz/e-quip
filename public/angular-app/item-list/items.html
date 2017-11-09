@@ -1,10 +1,15 @@
 <h1>Items</h1>
+
 </br>
-               
+
+<button ng-click="vm.orderByMe('price', 'ascending')">Price Sort L-H</button>       
+<button ng-click="vm.orderByMe('price', 'descending')">Price Sort H-L</button>       
+
 <ul class="list-group">
-   <li ng-repeat="item in vm.items" class="list-group-item">
+   <li ng-repeat="item in vm.items | filter:customerFilter | orderBy: vm.myOrderBy : vm.reverse" class="list-group-item">
+      <h2><strong>{{ item.price | currency }}</strong></h2>
       <a ng-href="#!/{{ item._id }}">
-         <img src="/img/products/small/{{ item.image }}">
+         <img ng-src="/img/products/small/{{ item.image }}">
          {{ item.desc }}
       </a>
    </li>
