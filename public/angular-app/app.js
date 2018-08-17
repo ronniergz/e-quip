@@ -1,21 +1,26 @@
-
-angular.module('e-quip', ['ngRoute']).config(config);
+angular.module('e-quip', ['ngRoute'])
 
      
-function config($routeProvider) {
+.config(function($routeProvider, $locationProvider) {
+   
       $routeProvider
+            .when('/', {
+                  templateUrl: 'angular-app/home/home.html'
+                 })
+           .when('/test', {
+                 templateUrl: 'angular-app/test.html'
+           })                 
             .when('/items', {
                   templateUrl: 'angular-app/item-list/items.html',
                   controller: ItemsController,
                   controllerAs: 'vm'
            })
-            .when('/:_id', {
-                  templateUrl: 'angular-app/item-display/item.html',
-                  controller: ItemController,
-                  controllerAs: 'vm'
-           });
-
-}
+            .otherwise('/');
+           
+      // use HTML History API
+      //$locationProvider.html5Mode(true);
+      
+});
 
 
                         

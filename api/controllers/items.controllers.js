@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
 var Item = mongoose.model('Item');
 
-
+// Display all the items
 module.exports.itemsGetAll = function(req, res) {           
   console.log('GET all the items');
-      
+
   Item
     .find()
     .exec(function(err, items) {
@@ -13,9 +13,10 @@ module.exports.itemsGetAll = function(req, res) {
         .status(200)
         .json(items);
     });
-    
 };
 
+
+// Display one specific item
 module.exports.itemsGetOne = function(req, res) {           
   console.log('GET a specific item');
   var id = req.params.id;    
@@ -30,6 +31,7 @@ module.exports.itemsGetOne = function(req, res) {
     });
     
 };
+
 
 module.exports.itemsAbout = function(req, res) {           
   console.log('GET the About Page');
@@ -66,9 +68,3 @@ module.exports.itemsGetCases = function(req, res) {
     
 };
 
-module.exports.itemsGetCart = function(req, res) {           
-  console.log('GET the current user\'s shopping cart');
-  res
-    .status(200)
-    .send('<h2> Display The Current User\'s shopping cart </h2>');
-};

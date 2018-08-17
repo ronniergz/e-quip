@@ -2,11 +2,31 @@
 
 </br>
 
-<button ng-click="vm.orderByMe('price', 'ascending')">Price Sort L-H</button>       
-<button ng-click="vm.orderByMe('price', 'descending')">Price Sort H-L</button>       
-
+<!-- Sort and Filter Dropdowns -->
+<div class="row justify-content-end">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort By:<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li class="dropdown-item" ng-click="vm.orderByMe('price', 'ascending')">Price-Low to High</a>
+            <li class="dropdown-item" ng-click="vm.orderByMe('price', 'descending')">Price-High to Low</a>
+            <li class="dropdown-item" ng-click="vm.orderByMe('desc', 'ascending')">Name-A to Z</a>
+            <li class="dropdown-item" ng-click="vm.orderByMe('desc', 'descending')">Name-Z to A</a>
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter By:<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li class="dropdown-item" href="#">Price</a>
+            <li class="dropdown-item" href="#">Color</a>
+        </ul>
+    </div>   
+</div>
+ 
+<!-- Item List -->
 <ul class="list-group">
-   <li ng-repeat="item in vm.items | filter:customerFilter | orderBy: vm.myOrderBy : vm.reverse" class="list-group-item">
+   <li ng-repeat="item in vm.items | orderBy: vm.myOrderBy : vm.reverse" class="list-group-item">
       <h2><strong>{{ item.price | currency }}</strong></h2>
       <a ng-href="#!/{{ item._id }}">
          <img ng-src="/img/products/small/{{ item.image }}">

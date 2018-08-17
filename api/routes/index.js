@@ -29,16 +29,5 @@ router
     .route('/cases')
     .get(ctrlItems.itemsGetCases); 
 
-// Display shopping cart
-router
-    .route('/cart')
-    .get(ctrlItems.itemsGetCart); 
-/*   
-// Display user Login 
-router
-    .route('/account/login')
-    .get(ctrlAccounts.userLogin);
-*/    
-
 module.exports = router;
 
