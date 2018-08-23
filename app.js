@@ -21,6 +21,12 @@ app.use('/node_modules', express.static(__dirname + '/node_modules'));
 // Add routing
 app.use(routes);
 
+// Catch everything else and redirect to /index.html
+// app.get('*', (req, res) => {
+//     console.log("Routing");
+//     res.sendFile(path.join(__dirname, '/index.html'));
+// });
+
 // Listen for requests
 var server = app.listen(app.get('port'), function() {
   var port = server.address().port;

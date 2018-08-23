@@ -15,10 +15,16 @@ angular.module('e-quip', ['ngRoute'])
                   controller: ItemsController,
                   controllerAs: 'vm'
            })
+            .when('/items/:id', {
+                  templateUrl: 'angular-app/item-display/item.html',
+                  controller: ItemController,
+                  controllerAs: 'vm'
+           })
+           
             .otherwise('/');
            
       // use HTML History API
-      //$locationProvider.html5Mode(true);
+      $locationProvider.html5Mode(true);
       
 });
 
