@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var dburl = 'mongodb://localhost:27017/equip';
-
 mongoose.connect(dburl);
 
 // database has connected
@@ -43,4 +42,4 @@ process.once('SIGUSR2', function() {
 });
 
 // Bring in schemas and models
-require('./items.model.js');
+require('./db.model.js');

@@ -7,9 +7,6 @@ angular.module('e-quip', ['ngRoute'])
             .when('/', {
                   templateUrl: 'angular-app/home/home.html'
                  })
-           .when('/test', {
-                 templateUrl: 'angular-app/test.html'
-           })                 
             .when('/items', {
                   templateUrl: 'angular-app/item-list/items.html',
                   controller: ItemsController,
@@ -20,11 +17,26 @@ angular.module('e-quip', ['ngRoute'])
                   controller: ItemController,
                   controllerAs: 'vm'
            })
+            .when('/register', {
+                  templateUrl: 'angular-app/register/register.html',
+                  controller: RegisterController,
+                  controllerAs: 'vm'
+           })
+            .when('/register/sucess', {
+                  templateUrl: 'angular-app/register/sucess.html',
+           })
            
+            .when('/search/:query', {
+                  templateUrl: 'angular-app/item-list/items.html',
+                  controller: SearchController,
+                  controllerAs: 'vm'
+           })
             .otherwise('/');
            
       // use HTML History API
       $locationProvider.html5Mode(true);
+
+      
       
 });
 

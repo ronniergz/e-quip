@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var ctrlItems = require('../controllers/items.controllers.js');
-var ctrlAccounts = require('../controllers/accounts.controllers.js');
+var ctrlUsers = require('../controllers/users.controllers.js');
 
 // Display all items
 router
@@ -14,20 +14,15 @@ router
     .route('/items/:id')
     .get(ctrlItems.itemsGetOne);
     
-//  About Us
+// Display all items
 router
-    .route('/about')
-    .get(ctrlItems.itemsAbout); 
+    .route('/search')
+    .get(ctrlItems.itemsGetQuery);
 
-// Display phones
+// Create new user
 router
-    .route('/phones')
-    .get(ctrlItems.itemsGetPhones);  
-
-// Display cases
-router
-    .route('/cases')
-    .get(ctrlItems.itemsGetCases); 
-
+    .route('/users/new')
+    .post(ctrlUsers.userRegister);
+    
 module.exports = router;
 

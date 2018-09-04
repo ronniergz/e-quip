@@ -32,39 +32,24 @@ module.exports.itemsGetOne = function(req, res) {
     
 };
 
+// Display items matching search criteria 
+module.exports.itemsGetQuery = function(req, res) {           
+  console.log('GET items via search');
 
-module.exports.itemsAbout = function(req, res) {           
-  console.log('GET the About Page');
-  res
-    .status(200)
-    .send('<h2> Display the About Information </h2>');
-};
+  var query = req.query.q;
 
-module.exports.itemsGetPhones = function(req, res) {           
-  console.log('GET the phones');
-  
   Item
-    .find({type : "phone"})
+    .find( {$text : {$search : query}} )
     .exec(function(err, items) {
       console.log("Found items", items.length);
       res
         .status(200)
         .json(items);
     });
-    
 };
 
-module.exports.itemsGetCases = function(req, res) {           
-  console.log('GET the cases');
-  
-  Item
-    .find({type : "case"})
-    .exec(function(err, items) {
-      console.log("Found items", items.length);
-      res
-        .status(200)
-        .json(items);
-    });
-    
-};
+//-----------ADMIN ONLY---------------//
 
+// Add item
+// Edit item
+// Remove item

@@ -1,0 +1,16 @@
+</br>
+<div class="row">
+   <form name="vm.registerForm" ng-controller="RegisterController as vm" ng-submit="vm.registerUser()">
+      <input type="text" name="firstName" ng-model="vm.firstName"/>First Name
+      <br />
+      <input type="text" name="lastName" ng-model="vm.lastName"/>Last Name
+      <br />
+      <input type="email" name="email" ng-model="vm.email"/>Email
+      <br />
+      <input type="password" name="password" ng-model="vm.password"/>Password
+      <br />
+      <a href="/register/sucess">
+         <button type="submit" >Submit</button>      
+      </a>
+   </form>
+</div>
