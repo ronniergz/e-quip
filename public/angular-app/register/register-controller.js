@@ -1,17 +1,14 @@
 angular.module('e-quip').controller('RegisterController', RegisterController);
 
-function RegisterController($http, $routeParams) {
-
+function RegisterController($http, $location) {
    var vm = this;
-   // var id = $routeParams.id;
-   
    vm.registerUser = function() {
-   
-      console.log(vm.firstName);
-      console.log(vm.lastName);
-      console.log(vm.email);
-      console.log(vm.password);
-      alert("Register new user"); 
+      $http.post('/users/new', { 
+         firstName : vm.firstName,
+         lastName : vm.lastName,
+         email : vm.email,
+         password : vm.password
+      });
+      $location.path('/register/sucess');
    };
-
 }

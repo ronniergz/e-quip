@@ -24,7 +24,6 @@ var userSchema = new mongoose.Schema({
         email : String,
         username : String,
         password : String,
-
 });
 
 // compile model from the schema
