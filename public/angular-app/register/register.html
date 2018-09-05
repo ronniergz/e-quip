@@ -1,16 +1,16 @@
 </br>
-<div class="row">
-   <form name="vm.registerForm" ng-controller="RegisterController as vm" ng-submit="vm.registerUser()">
-      <input type="text" name="firstName" ng-model="vm.firstName"/>First Name
-      <br />
-      <input type="text" name="lastName" ng-model="vm.lastName"/>Last Name
-      <br />
-      <input type="email" name="email" ng-model="vm.email"/>Email
-      <br />
-      <input type="password" name="password" ng-model="vm.password"/>Password
-      <br />
-      <!--<a href="/register/sucess">-->
-         <button type="submit" >Submit</button>      
-      <!--</a>-->
+<div class="text-center" cz-shortcut-listen="true">
+   <form class="form-signin" name="vm.registerForm" ng-controller="RegisterController as vm" ng-submit="vm.registerUser()">
+      <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
+      <label for="inputEmail" class="sr-only">First Name</label>
+      <input type="text" class="form-control" name="firstName" ng-model="vm.firstName" class="form-control" placeholder="First Name" required="" autofocus="">
+      <label for="inputEmail" class="sr-only">Last Name</label>
+      <input type="text" class="form-control" name="lastName" ng-model="vm.lastName"class="form-control" placeholder="Last Name" required="" autofocus="">
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" class="form-control" name="email" ng-model="vm.email" placeholder="Email address" required="" autofocus="">
+      <label for="inputPassword" class="sr-only" >Password</label>
+      <input type="password" class="form-control" name="password" ng-model="vm.password" placeholder="Password" required="">
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+      <p class="mt-5 mb-3 text-muted">© 2018</p>
    </form>
 </div>

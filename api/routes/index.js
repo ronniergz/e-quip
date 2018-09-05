@@ -19,10 +19,13 @@ router
     .route('/search')
     .get(ctrlItems.itemsGetQuery);
 
-// Create new user
+// Authentication
 router
-    .route('/users/new')
-    .post(ctrlUsers.userRegister);
+    .route('/users/register')
+    .post(ctrlUsers.register);
+router
+    .route('/users/login')
+    .post(ctrlUsers.login);
     
 module.exports = router;
 

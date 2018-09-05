@@ -21,9 +21,21 @@ var itemSchema = new mongoose.Schema({
 var userSchema = new mongoose.Schema({
         firstName : String,
         lastName : String,
-        email : String,
-        username : String,
-        password : String,
+        email : {
+            type: String,
+            unique: true,
+            required: true
+        },
+        password : {
+            type: String,
+            unique: true,
+            required: true
+        },
+        roles : {
+            type : String,
+            enum: ['user', 'admin'],
+            default : ['user']
+            }
 });
 
 // compile model from the schema

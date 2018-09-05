@@ -4,6 +4,7 @@
     <title>E-quip</title>
     <base href="/" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css">
 
 </head>
 <body>
@@ -30,7 +31,7 @@
                             <a class="nav-link" href="/about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/register">Register</a>
+                           <a class="nav-link" href="/login">Login</a>
                         </li>
                         <form ng-controller="SearchController as vm" ng-submit="vm.formInput()" class="form-inline my-2 my-lg-0" id="textSearch">
                             <input class="form-control mr-sm-2" ng-model="vm.text" name="text" type="text" aria-label="Search" />

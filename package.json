@@ -13,6 +13,7 @@
   },
   "author": "Ronnie Rodriguez",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
     "express": "^4.15.3",
     "mongodb": "^2.2.31",

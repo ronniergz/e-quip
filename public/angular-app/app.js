@@ -17,13 +17,16 @@ angular.module('e-quip', ['ngRoute'])
                   controller: ItemController,
                   controllerAs: 'vm'
            })
+            .when('/login', {
+                  templateUrl: 'angular-app/login/login.html',
+           })           
             .when('/register', {
                   templateUrl: 'angular-app/register/register.html',
                   controller: RegisterController,
                   controllerAs: 'vm'
            })
             .when('/register/sucess', {
-                  templateUrl: 'angular-app/register/sucess.html',
+                  templateUrl: 'angular-app/register/register-sucess.html',
            })
            
             .when('/search/:query', {
