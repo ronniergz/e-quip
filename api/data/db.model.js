@@ -1,5 +1,26 @@
 var mongoose = require('mongoose');
 
+var reviewSchema = new mongoose.Schema({
+        username : {
+            type : String,
+            required : true
+        },
+        rating : {
+            type : Number,
+            required : true,
+            min : 0,
+            max : 5
+        },
+        review : {
+            type : String,
+            required : true
+        },
+        createdOn : {
+            type : Date,
+            "default" : Date.now
+        }
+});
+
 var itemSchema = new mongoose.Schema({
         id : Number,
         type: {
@@ -15,12 +36,17 @@ var itemSchema = new mongoose.Schema({
         stock : {
             type : Number,
             min : 1 
-        }
+        },
+        reviews: [reviewSchema]
 });
 
+
 var userSchema = new mongoose.Schema({
-        firstName : String,
-        lastName : String,
+        username : {
+            type: String,
+            unique: true,
+            required: true
+        },
         email : {
             type: String,
             unique: true,

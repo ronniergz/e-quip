@@ -2,14 +2,22 @@
 <div class="text-center" cz-shortcut-listen="true">
    <form class="form-signin" name="vm.registerForm" ng-controller="RegisterController as vm" ng-submit="vm.registerUser()">
       <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
-      <label for="inputEmail" class="sr-only">First Name</label>
-      <input type="text" class="form-control" name="firstName" ng-model="vm.firstName" class="form-control" placeholder="First Name" required="" autofocus="">
-      <label for="inputEmail" class="sr-only">Last Name</label>
-      <input type="text" class="form-control" name="lastName" ng-model="vm.lastName"class="form-control" placeholder="Last Name" required="" autofocus="">
+      
+      <div ng-if="vm.error" class="alert alert-danger" role="alert">
+         {{ vm.error }}
+      </div>
+      <label for="inputUsername" class="sr-only">Username</label>
+      <input type="text" class="form-control" name="userName" ng-model="vm.username" class="form-control" placeholder="Username" autofocus="">
+      
       <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" class="form-control" name="email" ng-model="vm.email" placeholder="Email address" required="" autofocus="">
+      <input type="email" class="form-control" name="email" ng-model="vm.email" placeholder="Email address" autofocus="">
+      
       <label for="inputPassword" class="sr-only" >Password</label>
-      <input type="password" class="form-control" name="password" ng-model="vm.password" placeholder="Password" required="">
+      <input type="password" class="form-control" name="password" ng-model="vm.password" placeholder="Password" autofocus="">
+   
+      <label for="inputPassword" class="sr-only" >Repeat Password</label>
+      <input type="password" class="form-control" name="password-repeat" ng-model="vm.passwordRepeat" placeholder="Password" autofocus="">
+      
       <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
       <p class="mt-5 mb-3 text-muted">© 2018</p>
    </form>

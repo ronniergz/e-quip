@@ -10,7 +10,16 @@ function ItemController($http, $routeParams) {
       console.log(response);
       vm.item = response.data;
       console.log(vm.item.desc);
-      
+      console.log(vm.item.reviews);
    });
 
-};
+
+   vm.isLoggedIn = function() {
+      if (AuthFactory.isLoggedIn) {
+         return true;
+      } else {
+         return false;
+      }
+   };
+   
+}

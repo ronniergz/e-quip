@@ -9,5 +9,14 @@
       <p>Available colors: {{ vm.item.availableColors }}</p>
       <p>{{ vm.item.specs }}</p>
       <p>{{ vm.item.stock }} left in stock</p>
+      <ul class="list-group">
+         <li ng-repeat="review in vm.item.reviews" class="list-group-item">
+            <p>{{ review.username }}</p>
+            <p>{{ review.rating }}</p>
+            <p>{{ review.review }}</p>
+            <p>{{ review.createdOn | date: 'MM/dd/yyyy'}}</p>
+         </li>
+         
+      </ul>
    </div>
 </div>

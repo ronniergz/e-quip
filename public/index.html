@@ -9,43 +9,12 @@
 </head>
 <body>
     
-    <div id="container" class="container">
-            <!-- Navigation Bar -->
-            <nav class="navbar navbar-expand-md navbar-light bg-light">
-                <a class="navbar-brand" href="/">
-                              <img src="/img/logo.jpg" alt="">
-                          </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                          </button>
+    <div id="container" class="container ng-cloak">
+        <!-- Navigation Bar -->
+        <equip-Navigation></equip-Navigation>
             
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/items">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about">About</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="/login">Login</a>
-                        </li>
-                        <form ng-controller="SearchController as vm" ng-submit="vm.formInput()" class="form-inline my-2 my-lg-0" id="textSearch">
-                            <input class="form-control mr-sm-2" ng-model="vm.text" name="text" type="text" aria-label="Search" />
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" form="textSearch">Search</button>
-                        </form>                        
-                    </ul>
-                </div>
-    
-    
-    
-            </nav>
-            
-             <!-- Item List -->
-            <div ng-view></div>
+         <!-- Item List -->
+        <div ng-view></div>
     </div>
     
     <footer class="footer">
@@ -63,10 +32,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/angular-jwt/dist/angular-jwt.js"></script>
     <script src="angular-app/app.js"></script>    
     <script src="angular-app/item-list/item-list-controller.js"></script>  
     <script src="angular-app/item-display/item-display-controller.js"></script> 
     <script src="angular-app/register/register-controller.js"></script> 
+    <script src="angular-app/navigation-directive/navigation-directive.js"></script> 
+    <script src="angular-app/login/login-controller.js"></script> 
+    <script src="angular-app/auth/auth-factory.js"></script> 
+    <script src="angular-app/auth/auth-interceptor.js"></script> 
     
 </body>
 </html>

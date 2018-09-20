@@ -3,6 +3,7 @@ var router = express.Router();
 
 var ctrlItems = require('../controllers/items.controllers.js');
 var ctrlUsers = require('../controllers/users.controllers.js');
+var ctrlReviews = require('../controllers/reviews.controllers.js');
 
 // Display all items
 router
@@ -19,7 +20,13 @@ router
     .route('/search')
     .get(ctrlItems.itemsGetQuery);
 
-// Authentication
+// Get review list and Add new reviews   
+router
+    .route('/items/:id/reviews')
+    .get(ctrlReviews.reviewsGetAll)
+    .post(ctrlReviews.reviewsAddOne);
+
+// User Authentication
 router
     .route('/users/register')
     .post(ctrlUsers.register);

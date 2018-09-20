@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light" ng-controller="LoginController as vm">
+    <a class="navbar-brand" href="/">
+        <img src="/img/logo.jpg" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="/items">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+            <li class="nav-item"  ng-if="!vm.isLoggedIn()"><a class="nav-link" href="/login">Login</a></li>
+            
+            <li class="nav-item"  ng-if="vm.isLoggedIn()"><a class="nav-link" href="/profile">Profile</a></li>                        
+            <li class="nav-item"  ng-if="vm.isLoggedIn()"><a class="nav-link" ng-click="vm.logout()">Logout</a></li>  
+            <li class="nav-item"  ng-if="vm.isLoggedIn()"><p class="nav-link">Welcome Back {{ vm.getUser() }} </p></li>  
+            
+            <form ng-controller="SearchController as vm" ng-submit="vm.formInput()" class="form-inline my-2 my-lg-0" id="textSearch">
+                <input class="form-control mr-sm-2" ng-model="vm.text" name="text" type="text" aria-label="Search" />
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" form="textSearch">Search</button>
+            </form>   
+            
+        </ul>
+    </div>
+
+</nav>
