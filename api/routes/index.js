@@ -15,12 +15,12 @@ router
     .route('/items/:id')
     .get(ctrlItems.itemsGetOne);
     
-// Display all items
+// Display all matching items
 router
     .route('/search')
     .get(ctrlItems.itemsGetQuery);
 
-// Get review list and Add new reviews   
+// Get review list and add new reviews   
 router
     .route('/items/:id/reviews')
     .get(ctrlReviews.reviewsGetAll)

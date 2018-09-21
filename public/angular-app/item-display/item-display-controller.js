@@ -1,6 +1,6 @@
 angular.module('e-quip').controller('ItemController', ItemController);
 
-function ItemController($http, $routeParams) {
+function ItemController($http, $routeParams, AuthFactory) {
 
    var vm = this;
    var id = $routeParams.id;
@@ -9,8 +9,7 @@ function ItemController($http, $routeParams) {
    $http.get('/items/' + id).then(function(response) {
       console.log(response);
       vm.item = response.data;
-      console.log(vm.item.desc);
-      console.log(vm.item.reviews);
+      console.log(vm.isLoggedIn());
    });
 
 
@@ -20,6 +19,10 @@ function ItemController($http, $routeParams) {
       } else {
          return false;
       }
+   };
+   
+   vm.addReview = function () {
+      console.log("add review");
    };
    
 }

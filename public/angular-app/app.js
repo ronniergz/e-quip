@@ -11,25 +11,19 @@ function config($httpProvider, $routeProvider, $locationProvider) {
               templateUrl: 'angular-app/home/home.html',
               controller: LoginController,
               controllerAs: 'vm',
-              access: {
-                  restricted: false
-              }
+              access: { restricted: false }
              })
         .when('/items', {
               templateUrl: 'angular-app/item-list/items.html',
               controller: ItemsController,
               controllerAs: 'vm',
-              access: {
-                  restricted: false
-              }
+              access: { restricted: false }
        })
         .when('/items/:id', {
               templateUrl: 'angular-app/item-display/item.html',
               controller: ItemController,
               controllerAs: 'vm',
-              access: {
-                  restricted: false
-              }
+              access: { restricted: false }
        })
         .when('/login', {
               templateUrl: 'angular-app/login/login.html',
@@ -48,9 +42,7 @@ function config($httpProvider, $routeProvider, $locationProvider) {
               templateUrl: 'angular-app/register/register.html',
               controller: RegisterController,
               controllerAs: 'vm',
-              access: {
-                  restricted: false
-              }
+              access: { restricted: false }
        })
         .when('/register/sucess', {
               templateUrl: 'angular-app/register/register-sucess.html',
@@ -64,9 +56,7 @@ function config($httpProvider, $routeProvider, $locationProvider) {
        .when('/profile', {
               templateUrl: 'angular-app/profile/profile.html',
               controllerAs: 'vm',
-               access: {
-                   restricted: true
-               }
+               access: { restricted: true }
        })
         .otherwise('/');
     }

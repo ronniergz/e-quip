@@ -16,7 +16,14 @@
             <p>{{ review.review }}</p>
             <p>{{ review.createdOn | date: 'MM/dd/yyyy'}}</p>
          </li>
-         
       </ul>
+      
+      <div ng-if="vm.isLoggedIn()">
+         <form name="vm.reviewForm" ng-submit="vm.addReview()">
+            Your Rating: <input type="number" name="rating" required ng-pattern="/^[1-5]$/" ng-model="vm.rating">
+            Your Review: <textarea name="rating" required ng-model="vm.review"></textarea>
+            <button type="submit" class="btn">Add Review</button>
+         </form>
+      </div>
    </div>
 </div>
