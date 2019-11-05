@@ -21,7 +21,7 @@
     "express": "^4.15.3",
     "jsonwebtoken": "^8.3.0",
     "mongodb": "^2.2.36",
-    "mongoose": "^4.11.13"
+    "mongoose": "^5.7.5"
   },
   "devDependencies": {
     "mocha": "^3.4.2",
