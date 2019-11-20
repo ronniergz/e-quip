@@ -13,7 +13,7 @@
   },
   "author": "Ronnie Rodriguez",
   "dependencies": {
-    "angular": "^1.7.8",
+    "angular": "^1.7.9",
     "angular-jwt": "^0.1.10",
     "angular-route": "^1.7.8",
     "bcrypt-nodejs": "0.0.3",
